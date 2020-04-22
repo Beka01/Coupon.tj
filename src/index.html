@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="up">
         <header class="header">
             <div class="header__contacts">
                 <div class="container">
@@ -65,13 +65,15 @@
     
                         <div class="header__controls">
                             <ul>
-                                <li class="header__item ">
-                                    <i></i>
-                                    <a data-modal="signin" href="#">Вход</a>
+                                <li data-modal="signin" class="header__item">
+                                    <a class="header__item" href="#">
+                                        <i class="fa fa-sign-in"></i>
+                                        Вход</a>
                                 </li>
-                                <li class="header__item">
-                                    <i></i>
-                                    <a data-modal="registration" href="#">Регистрация</a>
+                                <li data-modal="registration" class="header__item">
+                                    <a class="header__item" href="#">
+                                        <i class="fa fa-edit"></i>
+                                        Регистрация</a>
                                 </li>
                             </ul>
                         </div>
@@ -117,7 +119,7 @@
                         <aside>
                             <h3 class="title title_mini">Я ищу</h3>
     
-                            <nav class="aside__menu">
+                            <nav class="aside__menu" >
                                 <ul>
                                     <li>
                                         <a class="aside__category" href="#">
@@ -616,7 +618,7 @@
                                 <header class="products__item-header">
                                     <img src="img/coupon/coupon_fitness.jpg" alt="#">
                                     <div class="products__item-icon">
-                                        <a data-modal="coupon" class="fa fa-eye" href="#product-quick-view-dialog" data-effect="mfp-move-from-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick View"></a>
+                                        <a data-modal="coupon" class="fa fa-eye" href="#"></a>
                                     </div>
                                     <div class="products__item-secondary">
                                         <img src="img/coupon/coupon_fitness2.jpg" alt="food">
@@ -1067,8 +1069,8 @@
                     </div>
                     <div class="footer__company">
                         <div class="footer__menu-title">Компания</div>
+                        <hr>
                         <ul>
-                            <hr>
                             <li>
                                 <a href="#" class="footer__menu-links">Как работает Coupon.tj</a>
                             </li>
@@ -1143,11 +1145,11 @@
             <form class="dialog-form">
                 <div class="form-group">
                     <label>Имя</label>
-                    <input type="text" placeholder="Ваше имя" class="form-control">
+                    <input name="name" type="text" placeholder="Ваше имя" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Телефон</label>
-                    <input type="text" placeholder="Ваш телефон" class="form-control">
+                    <input name="phone" placeholder="Ваш телефон" class="form-control">
                 </div>
                 <input type="submit" value="заказать звонок" class="modal__button">
             </form>
@@ -1155,7 +1157,7 @@
         <!-- THANKS MODAL -->
         <div class="modal modal__thanks" id="thanks">
             <div class="modal__close">×</div>
-            <div class="modal__subtitle">Спасибо за вашу заявку!</div>
+            <div class="modal__subtitle modal__subtitle-consult">Спасибо за вашу заявку!</div>
             <div class="modal__descr">Наш менеджер свяжется с вами <br> в ближайшее время!</div>
         </div>
         <!-- REGISTRATION MODAL -->
@@ -1167,29 +1169,29 @@
             <form class="dialog-form">
                 <div class="form-group">
                     <label>Телефон</label>
-                    <input type="text" placeholder="Ваш телефон" class="form-control">
+                    <input name="phone" maxlength="9" placeholder="Ваш телефон" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Пароль</label>
-                    <input type="password" placeholder="Ваш пароль" class="form-control">
+                    <input name="password" type="password" placeholder="Ваш пароль" class="form-control" id="password">
                 </div>
                 <div class="form-group">
                     <label>Повторите пароль</label>
-                    <input type="password" placeholder="Введите пароль еще раз" class="form-control">
+                    <input name="repassword" type="password" placeholder="Введите пароль еще раз" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>E-mail</label>
-                    <input type="text" placeholder="email@domain.com" class="form-control">
+                    <input name="email" type="text" placeholder="email@domain.com" class="form-control">
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox">Регистрируясь на сайте, я соглашаюсь с условиями договора Публичной оферты и Пользовательским соглашением
+                        <input name="checkbox" type="checkbox">Регистрируясь на сайте, я соглашаюсь с условиями договора Публичной оферты и Пользовательским соглашением
                     </label>
                 </div>
                 <input type="submit" value="Зарегистрироваться" class="modal__button">
             </form>
             <ul class="dialog-alt-links">
-                <li><a class="popup-text" href="#login-dialog" data-effect="mfp-zoom-out">Уже зарегистрирован(а)</a>
+                <li><a class="popup-text" href="#">Уже зарегистрирован(а)</a>
                 </li>
             </ul>
         </div>
@@ -1212,11 +1214,11 @@
             <form class="dialog-form">
                 <div class="form-group">
                     <label>Телефон</label>
-                    <input type="number" placeholder="Ваш телефон" class="form-control">
+                    <input name="phone" maxlength="9" placeholder="Ваш телефон" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Пароль</label>
-                    <input type="password" placeholder="Ваш пароль" class="form-control">
+                    <input name="password" type="password" placeholder="Ваш пароль" class="form-control">
                 </div>
                 <div class="checkbox">
                     <label>
@@ -1226,9 +1228,9 @@
                 <input type="submit" value="Вход" class="modal__button">
             </form>
             <ul class="dialog-alt-links">
-                <li><a class="popup-text" href="#registration" data-effect="mfp-zoom-out">Я не зарегистрирован(а)</a>
+                <li><a class="popup-text" href="#">Я не зарегистрирован(а)</a>
                 </li>
-                <li><a class="popup-text" href="#password-recover-dialog" data-effect="mfp-zoom-out">Забыли пароль</a>
+                <li><a class="popup-text" href="#">Забыли пароль</a>
                 </li>
             </ul>
         </div>
@@ -1330,7 +1332,7 @@
         <!-- COMMENTS MODAL -->
         <div class="modal modal__couponlinks" id="comments">
             <div class="modal__close-links" id="closelinks">×</div>
-            <div class="comments__scroll" id="linksScroll">
+            <div class="comments__scroll">
                 <ul>
                     <li>
                         <div class="comments__header">
@@ -1429,7 +1431,7 @@
         <!-- MODAL ABOUT COMPANY -->
         <div class="modal modal__couponlinks" id="company">
             <div class="modal__close-links">×</div>
-            <div class="comments__scroll" id="linksScroll">
+            <div class="comments__scroll">
                 <div class="company__body"><span>ООО Технологиахои пешрафт</span>  - это сервис по заказу и доставки еды для проведения банкетов, фуршетов, корпоративов, кофе брейков. <br> <br> Здесь вы можете самостоятельно полностью сформировать и рассчитать стоимость меню для проведения свадьбы, дня рождения, юбилея или выездного мероприятия и пикника на природе. Наши специалисты всегда помогут вам правильно подготовить меню для мероприятия любого масштаба и уровня сложности. <br> <br> Мы не только, по-домашнему вкусно, приготовим заказанные ресторанные блюда, но и можем полностью сопроводить любое событие. <br> <br> Здесь вы можете самостоятельно полностью сформировать и рассчитать стоимость меню для проведения свадьбы, дня рождения, юбилея или выездного мероприятия и пикника на природе. Наши специалисты всегда помогут вам правильно подготовить меню для мероприятия любого масштаба и уровня сложности.</div>
             </div>
             <button data-modal="confirm" class="modal__button modal__button-links">Вебсайт компании</button>
@@ -1507,13 +1509,21 @@
         </div>
         <div class="modal modal__couponlinks-map" id="addressLinks">
             <div class="modal__close-links">×</div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6239.155871382516!2d68.78320012754912!3d38.56653705721901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b5d3825bda6cc9%3A0xf11066559f28752d!2z0JTRg9GI0LDQvdCx0LUg0J_Qu9Cw0LfQsA!5e0!3m2!1sru!2s!4v1587295372043!5m2!1sru!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6239.155871382516!2d68.78320012754912!3d38.56653705721901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b5d3825bda6cc9%3A0xf11066559f28752d!2z0JTRg9GI0LDQvdCx0LUg0J_Qu9Cw0LfQsA!5e0!3m2!1sru!2s!4v1587295372043!5m2!1sru!2s" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             <div class="company__header company__header-map">ООО Технологиахои пешрафт <br>ул. Рудаки 38/1, 13 этаж <br>г. Душанбе <br> тел: (+992) 918 24 00 05</div>
         </div>
         </div>
     </div>
+
+    <a href="#up" class="pageup">
+        <img src="img/chevron-circle-up-solid.svg" alt="up">
+    </a>
+    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/tiny-slider.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
